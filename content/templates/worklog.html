@@ -1,0 +1,36 @@
+<!--{calendar cal_cssid=calendar cur_cssid=current}-->
+<!--{if $worklog}-->
+<table>
+	<!--{section loop=$worklog name=worklog}-->
+	<tr>
+		<td class="td_info">
+			<!--{$worklog[worklog].wtime|date_format:'%r'}-->
+			, <!--{$worklog[worklog].username}-->
+		</td>
+		<td><!--{$worklog[worklog].wtext}--></td>
+	</tr>
+	<!--{/section}-->
+</table>
+<!--{/if}-->
+<p>
+<form action="<!--{$_urls.self}-->" method="post">
+	<p>
+		<textarea name="worklog[text]"></textarea>
+		<input type="submit" value=" done " />
+	</p>
+</form>
+</p>
+<style>
+#calendar td{
+	width:14%;
+}
+#current{
+	background-color:#eee;
+}
+textarea{
+	width:80%;
+}
+.td_info{
+	width:28.5%;
+}
+</style>

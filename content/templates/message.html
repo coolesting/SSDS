@@ -1,0 +1,10 @@
+<!--{if $link}-->
+What you want , now ?
+<ol>
+	<!--{foreach from=$link item=v key=k }-->
+	<li>
+		<a href="<!--{$v}-->"><!--{$k}--></a>
+	</li>
+	<!--{/foreach}-->
+</ol>
+<!--{/if}-->

@@ -1,0 +1,28 @@
+<table id="archive">
+	<thead>
+	<tr><th>
+		<span>Archive</span>
+		<a class="text_right" href="<!--{$_urls.main}-->earchive/">new archive</a>
+	</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<!--{if $archive}-->
+		<!--{foreach from=$archive name=archive key=myaid item=v}-->
+		<tr>
+		<td class="td_left">
+			<a href="<!--{$_urls.main}-->topic/aid_<!--{$myaid}-->/
+			"><!--{$v.name|escape:'htmlall'}--></a>
+			<span class="gray">(<!--{$v.topic_count}-->)</span>
+			<span>,&nbsp;&nbsp;&nbsp;&nbsp;
+			<!--{$v.description|escape:'htmlall'}-->
+			</span>
+		</td>
+		</tr>
+		<!--{/foreach}-->
+	<!--{else}-->
+		<tr><td>No archive , you should create one .</td></tr>
+	<!--{/if}-->
+	</tbody>
+</table>

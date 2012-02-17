@@ -1,0 +1,3 @@
+== INTRODUCTION
+
+A php program to build a web blog.

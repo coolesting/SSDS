@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head><title><!--{$title}--></title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<style>
+ul{ list-style:none;}
+</style>
+<div id="wrap">
+	<div id="header">
+		<!--{foreach from=$menu item=v key=k name=menu}-->
+			<a href="<!--{$_urls.main}--><!--{$k}-->/"><!--{$v}--></a>
+			<!--{if !$smarty.foreach.menu.last}-->&nbsp; | &nbsp;<!--{/if}-->
+		<!--{/foreach}-->
+	</div>
+	<!--{if $navigation}-->
+	<div id="navigation"><h2><!--{$navigation|escape:'htmlall'}--></h2></div>
+	<!--{/if}-->
+	<div id="bodyer">
+	<!--{include file="$_page.html"}-->
+	</div>
+	<div>Power by ssds</div>
+</div>
+<style>
+a{
+	color: #000080;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+	color: black;
+}
+html,body,td,ul,li,p,div,h2{
+	color: black;
+	background-color: #ffffff;
+	padding: 0;
+	margin: 0;
+	font:normal 14px/120% simsun;
+}
+li{
+	padding: 4px 0;
+}
+p{
+	padding: 2px 0;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+	border-style: none;
+}
+td,th{
+	border: 1px solid #C0C0C0;
+	padding: 4px;
+}
+thead{
+	background-color: #eeeeee;
+	text-align: left;
+}
+#navigation h2{
+	padding: 5px 0;
+	color: #000080;
+	font-size : 20px;
+	font-weight: bolder;
+}
+.text_width{
+	width: 80%;
+}
+.text_height{
+	height: 250px;
+}
+.text_right{
+	float: right;
+}
+.text_left{
+	float: left;
+}
+.td_center{
+	text-align: center;
+}
+.bold{
+	font-weight: bolder;
+}
+.gray{
+	color: gray;
+}
+.tip{
+	font-size: 11px;
+	color: gray;
+}
+#header{
+	background-color: #eeeeee;
+}
+#bodyer{
+	min-height: 550px;
+}
+</style>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<table>
+	<thead>
+	<tr><th>
+		<span><a href="<!--{$_urls.main}-->archive/">Archive</a></span>
+		<!--{if $_args.aid && $archive}-->
+		<span>&nbsp;>>&nbsp;<!--{$archive[$_args.aid].name}--></span>
+		<span class="text_right">
+			<a href="<!--{$_urls.main}-->etopic/
+			<!--{if $_args.aid}-->aid_<!--{$_args.aid}-->/<!--{/if}-->">new topic</a>
+		</span>
+		<!--{/if}-->
+	</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<!--{if $topic}-->
+		<!--{foreach from=$topic item=topic }-->
+		<tr>
+		<td><p>
+			<a href="<!--{$_urls.main}-->post/
+				tid_<!--{$topic.tid}-->/aid_<!--{$topic.aid}-->/
+				topic_<!--{$topic.subject|urlencode|escape:'url'}-->"
+				title="<!--{$topic.subject}-->
+				"><!--{$topic.subject|escape:'htmlall'}--></a>
+				&nbsp;&nbsp;by&nbsp;<!--{$topic.author}-->
+		</p><p class="tip">
+			No:T<!--{$topic.tid}-->&nbsp;
+			View:<!--{$topic.views}-->&nbsp;
+			Replis:<!--{$topic.post_count}-->&nbsp;
+			Last state:<!--{$topic.altertime|date_format:"%a %R %P, %x"}-->&nbsp;,
+			<!--{$topic.last_reply_user}-->
+		</p>
+		</td></tr>
+		<!--{/foreach}-->
+	<!--{else}-->
+		<tr><td>No topic about the archive .</td></tr>
+	<!--{/if}-->
+	</tbody>
+</table>

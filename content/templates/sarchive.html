@@ -1,0 +1,28 @@
+<ul>
+	<li>
+	<table>
+<!--{if $archive}-->
+	<tr class="table_header">
+		<th style="width:25%">Topic name</th>
+		<th >Description</th>
+	</tr>
+	<!--{foreach from=$archive key=aid item=archive }-->
+	<tr>
+		<td class="td_left">
+		<a href="<!--{$_urls.main}-->etopic/aid_<!--{$aid}-->"
+		title="<!--{$archive.name}-->"><!--{$archive.name|escape:'htmlall'}--></a>
+		</td>
+		<td class="td_left">
+		<!--{$archive.description|escape:'htmlall'}-->
+		</td>
+	</tr>
+	<!--{/foreach}-->
+<!--{else}-->
+	<tr><td>No available archive to be selected .</td></tr>
+<!--{/if}-->
+	</table>
+	</li>
+	<li>
+		<a href="<!--{$_urls.main}-->earchive/">Create new archive</a>
+	</li>
+</ul>
